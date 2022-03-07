@@ -1,6 +1,7 @@
 package demo.apiv1.domain;
 
 import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
@@ -13,9 +14,10 @@ import static lombok.AccessLevel.PROTECTED;
 @NoArgsConstructor(access = PROTECTED)
 public class User {
     @Id
-    @GeneratedValue(strategy = IDENTITY)
-    @Column(name = "user_id", nullable = false)
-    private Long id;
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
+    @Column(name = "user_id")
+    private String id;
 
     private String username;
 
@@ -27,5 +29,15 @@ public class User {
         this.username = username;
         this.password = password;
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

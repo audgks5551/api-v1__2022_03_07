@@ -28,12 +28,15 @@ class UserRepositoryTest {
         User user = new User("sample1", "password", "mark");
         User savedUser = userRepository.save(user);
 
+        em.flush();
+        em.clear();
+
         User findUser = userRepository.findById(savedUser.getId()).get();
 
         assertThat(findUser.getId()).isEqualTo(user.getId());
         assertThat(findUser.getUsername()).isEqualTo(user.getUsername());
         assertThat(findUser.getPassword()).isEqualTo(user.getPassword());
         assertThat(findUser.getName()).isEqualTo(user.getName());
-        assertThat(findUser).isEqualTo(user);
+        assertThat(findUser).isNotEqualTo(user);
     }
 }
