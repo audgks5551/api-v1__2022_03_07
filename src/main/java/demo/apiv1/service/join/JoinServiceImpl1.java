@@ -1,17 +1,21 @@
-package demo.apiv1.service.impl;
+package demo.apiv1.service.join;
 
 import demo.apiv1.domain.User;
 import demo.apiv1.exception.UserException;
 import demo.apiv1.repository.UserRepository;
-import demo.apiv1.service.UserService;
+import demo.apiv1.service.JoinService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+/**
+ * TODO
+ *  1. join() 테스트하기
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class UserServiceImp1 implements UserService {
+public class JoinServiceImpl1 implements JoinService {
 
     private final UserRepository userRepository;
 

@@ -1,5 +1,9 @@
 package demo.apiv1.exception;
 
+/**
+ * TODO
+ *  1. UserException 테스트하기
+ */
 public class UserException extends Exception {
     private final int ERR_CODE;
 

@@ -1,4 +1,4 @@
-package demo.apiv1.domain.userForm;
+package demo.apiv1.api.form;
 
 import demo.apiv1.domain.User;
 import lombok.AllArgsConstructor;
@@ -6,6 +6,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * TODO
+ *  1. 테스트하기
+ */
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor

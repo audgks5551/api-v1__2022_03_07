@@ -9,6 +9,10 @@ import javax.persistence.*;
 import static javax.persistence.GenerationType.IDENTITY;
 import static lombok.AccessLevel.PROTECTED;
 
+/**
+ * TODO
+ *  1. 테스트하기
+ */
 @Entity
 @Getter
 @NoArgsConstructor(access = PROTECTED)

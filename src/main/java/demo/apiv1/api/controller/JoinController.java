@@ -1,10 +1,10 @@
-package demo.apiv1.controller;
+package demo.apiv1.api.controller;
 
 import demo.apiv1.domain.User;
-import demo.apiv1.domain.response.ResponseDTO;
-import demo.apiv1.domain.userForm.UserForm;
+import demo.apiv1.api.response.ResponseDTO;
+import demo.apiv1.api.form.UserForm;
 import demo.apiv1.exception.UserException;
-import demo.apiv1.service.UserService;
+import demo.apiv1.service.JoinService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -15,13 +15,17 @@ import java.util.List;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
+/**
+ * TODO
+ *  1. 테스트하기
+ */
 @Slf4j
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
-public class UserController {
+public class JoinController{
     
-    private final UserService userService;
+    private final JoinService joinService;
 
     @PostMapping(consumes = APPLICATION_JSON_VALUE)
     public ResponseEntity<?> join(@RequestBody UserForm userForm) throws UserException {
@@ -32,7 +36,7 @@ public class UserController {
             User userEntity = UserForm.toEntity(userForm);
 
             // 유저 가입
-            User registeredUser = userService.join(userEntity);
+            User registeredUser = joinService.join(userEntity);
 
             // entity -> dto
             UserForm userDto = new UserForm(registeredUser);
