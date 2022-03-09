@@ -27,7 +27,7 @@ public class JoinController{
     
     private final JoinService joinService;
 
-    @PostMapping(consumes = APPLICATION_JSON_VALUE)
+    @PostMapping
     public ResponseEntity<?> join(@RequestBody UserForm userForm) throws UserException {
         try {
             log.info("UserController.signup");
