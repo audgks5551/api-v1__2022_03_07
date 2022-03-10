@@ -17,5 +17,5 @@ import java.util.List;
 @Data
 public class ResponseDTO<T> {
     private String error;
-    private List<T> data;
+    private T data;
 }
