@@ -62,6 +62,5 @@ public class JoinController {
                     ResponseDTO.<UserForm>builder().error(e.getMessage()).build()
             );
         }
-
     }
 }
