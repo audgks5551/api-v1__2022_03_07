@@ -4,7 +4,6 @@ import demo.apiv1.domain.User;
 import demo.apiv1.exception.UserException;
 import demo.apiv1.repository.UserRepository;
 import demo.apiv1.service.JoinService;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

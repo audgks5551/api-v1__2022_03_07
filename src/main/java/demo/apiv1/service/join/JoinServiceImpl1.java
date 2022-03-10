@@ -16,14 +16,9 @@ public class JoinServiceImpl1 implements JoinService {
     private final UserRepository userRepository;
 
     public User join(User user) throws UserException {
-        /**
-         * 회원가입 아이디의 중복이 있는지 확인
-         */
-
         if (userRepository.findOptionalByUsername(user.getUsername()).isPresent()) {
-            log.warn("이미 가입된 유저입니다");
             throw new UserException("이미 가입된 유저입니다", 409);
-         }
+        }
 
         return userRepository.save(user);
     }
