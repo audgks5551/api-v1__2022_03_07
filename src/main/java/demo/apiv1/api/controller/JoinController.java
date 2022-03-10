@@ -23,7 +23,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
-public class JoinController{
+public class JoinController {
     
     private final JoinService joinService;
 

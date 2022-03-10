@@ -10,6 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import java.util.Optional;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
@@ -32,6 +34,23 @@ class UserRepositoryTest {
         em.clear();
 
         User findUser = userRepository.findById(savedUser.getId()).get();
+
+        assertThat(findUser.getId()).isEqualTo(user.getId());
+        assertThat(findUser.getUsername()).isEqualTo(user.getUsername());
+        assertThat(findUser.getPassword()).isEqualTo(user.getPassword());
+        assertThat(findUser.getName()).isEqualTo(user.getName());
+        assertThat(findUser).isNotEqualTo(user);
+    }
+
+    @Test
+    public void findByUsername() {
+        User user = new User("sample1", "password", "mark");
+        User savedUser = userRepository.save(user);
+
+        em.flush();
+        em.clear();
+
+        User findUser = userRepository.findOptionalByUsername(savedUser.getUsername()).get();
 
         assertThat(findUser.getId()).isEqualTo(user.getId());
         assertThat(findUser.getUsername()).isEqualTo(user.getUsername());

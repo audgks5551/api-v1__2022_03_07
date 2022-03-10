@@ -9,10 +9,6 @@ import javax.persistence.*;
 import static javax.persistence.GenerationType.IDENTITY;
 import static lombok.AccessLevel.PROTECTED;
 
-/**
- * TODO
- *  1. 테스트하기
- */
 @Entity
 @Getter
 @NoArgsConstructor(access = PROTECTED)
@@ -23,10 +19,13 @@ public class User {
     @Column(name = "user_id")
     private String id;
 
+    @Column(nullable = false)
     private String username;
 
+    @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false)
     private String name;
 
     public User(String username, String password, String name) {

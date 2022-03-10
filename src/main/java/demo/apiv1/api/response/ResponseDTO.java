@@ -5,12 +5,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * TODO
- *  1. 테스트하기
- */
 import java.util.List;
 
+/**
+ * TODO
+ *  1.테스트하기
+ */
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor

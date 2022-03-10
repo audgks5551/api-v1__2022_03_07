@@ -6,11 +6,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-/**
- * TODO
- *  1. 테스트하기
- */
 @Repository
 public interface UserRepository extends JpaRepository<User, String> {
-    Optional<User> findByUsername(String username);
+    Optional<User> findOptionalByUsername(String username);
+    Boolean findBooleanByUsername(String username);
 }
