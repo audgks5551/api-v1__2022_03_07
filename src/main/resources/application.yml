@@ -1,11 +1,19 @@
 server:
-  port: 8080
+  port: 8081
   servlet:
     context-path: /
     encoding:
       charset: UTF-8
       enabled: true
       force: true
+
+keycloak:
+  realm: My-test-realm
+  auth-server-url: http://localhost:8888/auth
+  ssl-required: external
+  resource: my-test-client
+  use-resource-role-mappings: true
+  bearer-only: true
 
 spring:
   datasource:
